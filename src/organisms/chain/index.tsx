@@ -29,7 +29,7 @@ const Chain = ({ avgRestakeTime, chainState }: IProps) => {
       const bonded = chainState.bonded;
       const avgBlockPerDay = chainState.avgBlockPerDay;
       const apr = calcAPR(supply, inflationRate, blocksPerYear, bonded, avgBlockPerDay);
-      const aprPercent = `${apr.toFixed(2)}`;
+      const aprPercent = `${(apr * 100).toFixed(2)}`;
 
       data[0].value = convertNumberFormat(height, 0);
       data[1].value = convertNumberFormat(supply, 0);
