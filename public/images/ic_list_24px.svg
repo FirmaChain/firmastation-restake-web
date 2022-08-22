@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <g data-name="group 27497">
+        <g data-name="rectangle 8278" transform="translate(5 3)" style="stroke-linejoin:round;stroke:#c4c4c4;fill:none">
+            <rect width="14" height="18" rx="2" style="stroke:none"/>
+            <rect x=".5" y=".5" width="13" height="17" rx="1.5" style="fill:none"/>
+        </g>
+        <path data-name="line 486" transform="translate(8.5 8)" style="stroke:#c4c4c4;fill:none" d="M0 0h7"/>
+        <path data-name="line 487" transform="translate(8.5 12)" style="stroke:#c4c4c4;fill:none" d="M0 0h7"/>
+        <path data-name="line 488" transform="translate(8.5 16)" style="stroke:#c4c4c4;fill:none" d="M0 0h7"/>
+    </g>
+</svg>
