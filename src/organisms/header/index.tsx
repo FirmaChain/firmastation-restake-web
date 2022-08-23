@@ -33,7 +33,7 @@ function Header({ nextRoundDateTime }: IProps) {
   };
 
   useInterval(() => {
-    if (nextRoundDateTime) {
+    if (nextRoundDateTime !== '00:00:00') {
       const now = new Date();
       const diff = new Date(nextRoundDateTime).getTime() - now.getTime();
 
@@ -48,6 +48,8 @@ function Header({ nextRoundDateTime }: IProps) {
       diffSec = diffSec === -1 ? 0 : diffSec;
 
       setNextRoundTime(`${('00' + diffHour).slice(-2)}:${('00' + diffMin).slice(-2)}:${('00' + diffSec).slice(-2)}`);
+    } else {
+      setNextRoundTime('00:00:00');
     }
   }, 800);
   
