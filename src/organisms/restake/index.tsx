@@ -28,16 +28,16 @@ const Restake = ({ totalRestakeState }: IProps) => {
       let nRestakeAmount = Number(Number(totalRestakeState.restakeAmount.toString()) / Math.pow(10, 6));
       let nFeesAmount = Number(Number(totalRestakeState.feesAmount.toString()) / Math.pow(10, 6));
 
-      if (nRestakeAmount < 100) {
+      if (nRestakeAmount < 1000) {
         strRestakeAmount = nRestakeAmount.toFixed(2);
       } else {
-        strRestakeAmount = nRestakeAmount.toFixed(0);
+        strRestakeAmount = numberWithCommas(nRestakeAmount.toFixed(0));
       }
 
-      if (nFeesAmount < 100) {
+      if (nFeesAmount < 1000) {
         strFeesAmount = nFeesAmount.toFixed(2);
       } else {
-        strFeesAmount = nFeesAmount.toFixed(0);
+        strFeesAmount = numberWithCommas(nFeesAmount.toFixed(0));
       }
 
       let data = [...restakeData];
