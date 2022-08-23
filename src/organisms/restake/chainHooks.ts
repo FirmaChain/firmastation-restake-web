@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useChainDataQuery } from "../../apollo/graphqls";
 import { DENOM } from "../../config";
 import { convertDisitNumber } from "../../utils/convert";

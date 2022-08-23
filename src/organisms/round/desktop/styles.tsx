@@ -69,6 +69,7 @@ export const RoundColumnItemWrapper = styled.div`
   & > div:nth-child(5){
     flex: 1 1 100%;
     text-align: right;
+    margin-right: -5px;
   }
   & > div:nth-child(6){
     flex: 1 1 80%;

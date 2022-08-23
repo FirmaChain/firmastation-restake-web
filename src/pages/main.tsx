@@ -4,7 +4,7 @@ import Header from "../organisms/header";
 import Restake from "../organisms/restake";
 import { useRestakeData } from "../organisms/restake/restakeHooks";
 
-import { ContentContainer, MainContentWrapper, MainDetailLeftWrapper, MainDetailRightWrapper, MainDetailWrapper, MainIcon, MainText } from "../styles/main";
+import { ContentContainer, MainContentWrapper, MainDetailLeftWrapper, MainDetailRightWrapper, MainDetailWrapper } from "../styles/main";
 import { useChainData } from "../organisms/restake/chainHooks";
 import Chain from "../organisms/chain";
 import Round from "../organisms/round";

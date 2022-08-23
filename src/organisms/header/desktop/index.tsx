@@ -6,7 +6,6 @@ interface IProps {
 }
 
 function HeaderDesktop ({ nextRoundTime }: IProps) {
-  console.log(nextRoundTime);
   return (
     <HeaderContainer>
       <HeaderWrapper>
