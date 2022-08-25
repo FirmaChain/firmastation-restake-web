@@ -36,7 +36,7 @@ const Row = ({ data, index, style, changeModalState, txDataState }: any) => {
   const currentAsset = data[index];
   const currentRoundDetails = currentAsset.roundDetails;
   const startTime = changeDateFormat(currentAsset.startDateTime);
-  const endTime = changeDateFormat(currentRoundDetails[currentRoundDetails.length - 1].dateTime);
+  const endTime = currentRoundDetails.length > 0 ? changeDateFormat(currentRoundDetails[currentRoundDetails.length - 1].dateTime) : startTime;
   const intervalTime = `${currentAsset.retakeTotalTime.toFixed(0)}s`;
 
   let restakeAmount = '';
