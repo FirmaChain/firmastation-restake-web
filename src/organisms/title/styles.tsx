@@ -13,6 +13,16 @@ export const TitleDesktopSymbol = styled.div`
   background-position: center center;
 `;
 
+export const TitleDesktopTextWrapper = styled.div`
+  width: 100%;
+  height: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const TitleDesktopText = styled.div`
   width: 534px;
   text-align: center;
@@ -21,6 +31,14 @@ export const TitleDesktopText = styled.div`
   font-family: Metropolis !important;
   color: white;
   margin-top: 18px;
+`;
+
+export const TitleDesktopMiniText = styled.div`
+  color: #aaa;
+  font-size: 22px;
+  display: flex;
+  align-self: flex-end;
+  margin-bottom: 7px;
 `;
 
 export const TitleMobileWrapper = styled.div`
@@ -54,4 +72,20 @@ export const TitleMobileText = styled.div`
   font-family: Metropolis !important;
   color: white;
   margin-top: 10px;
+`;
+
+export const TitleMobileTextSubWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+`;
+
+export const TitleMobileMiniText = styled.div`
+  color: #aaa;
+  font-size: 16px;
+  display: flex;
+  align-self: flex-end;
+  margin-left: 5px;
+  margin-bottom: 3px;
 `;

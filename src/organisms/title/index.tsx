@@ -1,7 +1,7 @@
 
 import React from "react";
 import { useMediaQuery } from "react-responsive";
-import { TitleDesktopSymbol, TitleDesktopText, TitleMobileSymbol, TitleMobileText, TitleMobileTextWrapper, TitleMobileWrapper } from "./styles";
+import { TitleDesktopMiniText, TitleDesktopSymbol, TitleDesktopText, TitleDesktopTextWrapper, TitleMobileMiniText, TitleMobileSymbol, TitleMobileText, TitleMobileTextSubWrapper, TitleMobileTextWrapper, TitleMobileWrapper } from "./styles";
 
 function Title() {
   const isMobile = useMediaQuery({ query: "(min-width:0px) and (max-width:800px)" });
@@ -12,7 +12,10 @@ function Title() {
         <TitleMobileSymbol/>
         <TitleMobileTextWrapper>
           <TitleMobileText>FIRMASTATION</TitleMobileText>
-          <TitleMobileText>RESTAKE</TitleMobileText>
+          <TitleMobileTextSubWrapper>
+            <TitleMobileText>RESTAKE</TitleMobileText>
+            <TitleMobileMiniText>(Beta)</TitleMobileMiniText>
+          </TitleMobileTextSubWrapper>
         </TitleMobileTextWrapper>
       </TitleMobileWrapper>
     )
@@ -20,7 +23,10 @@ function Title() {
     return (
       <>
         <TitleDesktopSymbol/>
-        <TitleDesktopText>FIRMASTATION RESTAKE</TitleDesktopText>
+        <TitleDesktopTextWrapper>
+          <TitleDesktopText>FIRMASTATION RESTAKE</TitleDesktopText>
+          <TitleDesktopMiniText>(Beta)</TitleDesktopMiniText>
+        </TitleDesktopTextWrapper>
       </>
     )
   }

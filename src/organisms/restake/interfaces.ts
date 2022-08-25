@@ -3,6 +3,7 @@ export interface IRestakeState {
   feesAmount: number;
   restakeAmount: number;
   restakeCount: number;
+  restakeAvgTime: number;
   nextRoundDateTime: string;
   roundDatas: IRoundData[]
 }
@@ -22,12 +23,6 @@ export interface IRoundDetail {
   restakeAmount: number;
   restakeCount: number;
   dateTime: string;
-}
-
-export interface IRoundTimeInfo {
-  diffTime: number;
-  startDateTime: string;
-  endDateTime: string;
 }
 
 export interface IModalTxHashData {

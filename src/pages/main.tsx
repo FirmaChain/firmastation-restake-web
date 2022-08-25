@@ -8,7 +8,7 @@ import { ContentContainer, MainContentWrapper, MainDetailLeftWrapper, MainDetail
 import { useChainData } from "../organisms/restake/chainHooks";
 import Chain from "../organisms/chain";
 import Round from "../organisms/round";
-import { IModalTxHashData, IRoundTimeInfo } from "../organisms/restake/interfaces";
+import { IModalTxHashData } from "../organisms/restake/interfaces";
 import Modal from "../organisms/modal";
 import Title from "../organisms/title";
 
@@ -23,10 +23,9 @@ function Main() {
   const { chainData } = useChainData();
   const { restakeData } = useRestakeData();
 
-  const [ modalState, setModalState ] = useState(false);
   const [ nextRoundDateTime, setNextRoundDateTime ] = useState('00:00:00');
   const [ avgRestakeTime, setAvgRestakeTime ] = useState('0');
-  const [ roundTimeInfos, setRoundTimeInfos ] = useState<Array<IRoundTimeInfo>>([]);
+  const [ modalState, setModalState ] = useState(false);
   const [ txDataState, setTxDataState ] = useState<Array<IModalTxHashData>>([]);
   
   const totalRestakeState: ITotalRestakeState = {
@@ -37,49 +36,12 @@ function Main() {
   };
   
   useEffect(()=>{
+    // Header
     setNextRoundDateTime(restakeData.nextRoundDateTime);
+    // Left Detail
+    setAvgRestakeTime(restakeData.restakeAvgTime.toFixed(2));
 
-    const roundDatas = restakeData.roundDatas;
-
-    let roundTimeInfos: IRoundTimeInfo[] = [];
-    let totalRetakeTime = 0;
-    
-    for (let i = 0; i < roundDatas.length; i++) {
-      const roundData = roundDatas[i];
-  
-      let roundTimeInfo: IRoundTimeInfo = {
-        startDateTime: roundData.startDateTime,
-        endDateTime: roundData.startDateTime,
-        diffTime: 0
-      };
-      
-      if (roundData.roundDetails.length > 0) {
-        const startDateTime = new Date(roundData.startDateTime);
-        const lastRoundDetail = roundData.roundDetails[roundData.roundDetails.length - 1];
-        const endDateTime = new Date(lastRoundDetail.dateTime);
-        const diffTime = (endDateTime.getTime() - startDateTime.getTime()) / 1000;
-  
-        roundTimeInfo = {
-          startDateTime: roundData.startDateTime,
-          endDateTime: lastRoundDetail.dateTime,
-          diffTime: diffTime
-        }
-  
-        if (i < 10) {
-          totalRetakeTime += diffTime;
-        }
-      }
-  
-      roundTimeInfos.push(roundTimeInfo);
-    }
-
-    setRoundTimeInfos(roundTimeInfos);
-
-    if (roundDatas.length >= 1) {
-      let count = roundDatas.length >= 10 ? 10 : roundDatas.length;
-      setAvgRestakeTime((totalRetakeTime / count).toFixed(2));
-    }
-  },[restakeData]);
+  }, [restakeData]);
   
   return (
     <ContentContainer>
@@ -92,7 +54,7 @@ function Main() {
             <Chain avgRestakeTime={avgRestakeTime} chainState={chainData} />
           </MainDetailLeftWrapper>
           <MainDetailRightWrapper>
-            <Round roundTimeInfos={roundTimeInfos} roundState={restakeData.roundDatas} changeModalState={setModalState} txDataState={setTxDataState}/>
+            <Round roundState={restakeData.roundDatas} changeModalState={setModalState} txDataState={setTxDataState}/>
           </MainDetailRightWrapper>
         </MainDetailWrapper>
       </MainContentWrapper>

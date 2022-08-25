@@ -7,6 +7,11 @@ export const ChainInfoCard = styled.div`
   align-items: center;
   margin-top: 30px;
   margin-left: 30px;
+
+  @media only screen and (max-width: 700px) {
+    width: calc(100% - 36px);
+    margin-left: 18px;
+  }
 `;
 
 export const ChainDescription = styled.div`

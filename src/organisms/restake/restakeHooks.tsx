@@ -10,6 +10,7 @@ export const useRestakeData = () => {
     feesAmount: 0,
     restakeAmount: 0,
     restakeCount: 0,
+    restakeAvgTime: 0,
     nextRoundDateTime: '2022-01-01T00:00:00.000Z',
     roundDatas: []
   });

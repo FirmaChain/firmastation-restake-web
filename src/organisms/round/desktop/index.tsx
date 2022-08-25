@@ -2,12 +2,11 @@ import React from "react";
 import AutoSizer from 'react-virtualized-auto-sizer';
 import { FixedSizeList as List } from 'react-window';
 import { changeDateFormat } from "../../../utils/common";
-import { IModalTxHashData, IRoundData, IRoundDetail, IRoundTimeInfo } from "../../restake/interfaces";
+import { IModalTxHashData, IRoundData, IRoundDetail } from "../../restake/interfaces";
 
 import { RoundColumnBtnImg, RoundColumnItem12, RoundColumnItem16, RoundColumnItemWrapper, RoundContainer, RoundHeaderItem, RoundHeaderWrapper } from "./styles";
 
 interface IProps {
-  roundTimeInfos: IRoundTimeInfo[],
   roundState: IRoundData[],
   changeModalState: (active: boolean) => void,
   txDataState: (datas: IModalTxHashData[]) => void
@@ -17,7 +16,7 @@ const numberWithCommas = (x: string) => {
   return x.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-const Row = ({ data, index, style, roundTimeInfos, changeModalState, txDataState }: any) => {
+const Row = ({ data, index, style, changeModalState, txDataState }: any) => {
   const onClickTransaction = (roundDetails: IRoundDetail[]) => {
     let modalDatas: IModalTxHashData[] = [];
 
@@ -35,9 +34,10 @@ const Row = ({ data, index, style, roundTimeInfos, changeModalState, txDataState
   }
 
   const currentAsset = data[index];
-  const startTime = changeDateFormat(roundTimeInfos[index].startDateTime);
-  const endTime = changeDateFormat(roundTimeInfos[index].endDateTime);
-  const intervalTime = `${roundTimeInfos[index].diffTime.toFixed(0)}s`;
+  const currentRoundDetails = currentAsset.roundDetails;
+  const startTime = changeDateFormat(currentAsset.startDateTime);
+  const endTime = changeDateFormat(currentRoundDetails[currentRoundDetails.length - 1].dateTime);
+  const intervalTime = `${currentAsset.retakeTotalTime.toFixed(0)}s`;
 
   let restakeAmount = '';
   const nRestakeAmount = Number(currentAsset.restakeAmount) / Math.pow(10, 6);
@@ -62,7 +62,7 @@ const Row = ({ data, index, style, roundTimeInfos, changeModalState, txDataState
   )
 }
 
-function RoundDesktop({ roundTimeInfos, roundState, changeModalState, txDataState }: IProps) {
+function RoundDesktop({ roundState, changeModalState, txDataState }: IProps) {
   return (
     <RoundContainer>
       <AutoSizer>
@@ -82,7 +82,7 @@ function RoundDesktop({ roundTimeInfos, roundState, changeModalState, txDataStat
               itemCount={roundState.length}
               itemSize={50}
               itemData={roundState}>
-              {(props) => Row({ ...props, roundTimeInfos, changeModalState, txDataState })}
+              {(props) => Row({ ...props, changeModalState, txDataState })}
             </List>
           </>
         )}
