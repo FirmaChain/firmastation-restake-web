@@ -13,19 +13,19 @@ export const RestakeContainer = styled.div`
 
 export const RestakeWrap = styled.div`
   width: 100%;
-  height: 85px;
+  height: 90px;
   max-width: ${({ theme }) => theme.sizes.retakeWrapSize};
   background-color: ${({ theme }) => theme.colors.restakeCard};
   border-radius: 4px;
   display: flex;
-  margin-top: 48px;
+  margin-top: 35px;
 
   @media only screen and (max-width: 1200px) {
     width: calc(100% - 20px);
     height: auto;
     flex-wrap: wrap;
     padding-top: 5px;
-    margin-top: 25px;
+    margin-top: 16px;
     background-color: #00000000;
     gap: 7px;
   }
@@ -58,7 +58,7 @@ export const RestakeTextWrap = styled.div`
 
 export const RestakeTitleTypo = styled.div`
   height: auto;
-  color: #96adea;
+  color: #b6c2e1;
   margin-bottom: 8px;
   font-size: ${({ theme }) => theme.sizes.restakeCardSize1};
   font-failmy: Lato;

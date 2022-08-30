@@ -74,6 +74,7 @@ export const RoundColumnItemWrapper = styled.div`
   }
   & > div:nth-child(2){
     flex: 1 1 200%;
+    margin-left: 5px;
   }
   & > div:nth-child(3){
     flex: 1 1 150%;
@@ -84,12 +85,12 @@ export const RoundColumnItemWrapper = styled.div`
   & > div:nth-child(4){
     flex: 1 1 90%;
     text-align: right;
-    margin-right: -11px;
+    margin-right: -5px;
   }
   & > div:nth-child(5){
     flex: 1 1 70%;
     display: flex;
-    margin-right: 2px;
+    margin-right: 4px;
     justify-content: center;
   }
 `;

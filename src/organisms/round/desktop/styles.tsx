@@ -14,11 +14,12 @@ export const RoundHeaderWrapper = styled.div`
     line-height: 50px;
   }
   & > div:nth-child(1){
-    flex: 1 1 80%;
+    flex: 1 1 100%;
     text-align: center;
   }
   & > div:nth-child(2){
     flex: 1 1 150%;
+    margin-left: 20px;
   }
   & > div:nth-child(3){
     flex: 1 1 150%;
@@ -52,11 +53,12 @@ export const RoundColumnItemWrapper = styled.div`
   height: 58px;
   
   & > div:nth-child(1){
-    flex: 1 1 80%;
+    flex: 1 1 100%;
     text-align: center;
   }
   & > div:nth-child(2){
     flex: 1 1 150%;
+    margin-left: 20px;
   }
   & > div:nth-child(3){
     flex: 1 1 150%;
@@ -98,5 +100,5 @@ export const RoundColumnBtnImg = styled.div`
   background-image: url("/images/ic_list_24px.svg");
   background-repeat:no-repeat;
   background-size:contain;
-  margin-left: 10px;
+  margin-left: 13px;
 `;

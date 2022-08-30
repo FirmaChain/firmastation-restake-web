@@ -20,17 +20,17 @@ export const ContentContainer = styled.div`
 export const MainContentWrapper = styled.div`
   z-index: 1;
   width: 100%;
-  height: calc(100% - 40px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
-  margin-bottom: 40px;
+  margin-top: 20px;
 
   @media only screen and (max-width: 1200px) {
-    height: calc(100% - 30px);
-    margin-bottom: 30px;
+    margin-top: 6px;
+    height: calc(100% - 61px);
+    margin-bottom: 55px;
   }
 `;
 
@@ -55,18 +55,17 @@ export const MainText = styled.div`
 
 export const MainDetailWrapper = styled.div`
   width: 100%;
-  height: calc(485px - 24px);
+  height: calc(546px - 24px);
   max-width: 1200px;
   display: flex;
   margin-top: 24px;
   gap: 20px;
-  padding-bottom: 24px;
   @media only screen and (max-width: 1200px) {
     display: flex;
     flex-direction: column;
-    height: 950px;
-    gap: 10px;
-    margin-top: 16px;
+    height: 1000px;
+    gap: 5px;
+    margin-top: 5px;
   }
 `;
 
@@ -89,8 +88,8 @@ export const MainDetailRightWrapper = styled.div`
   border-radius: 6px;
   @media only screen and (max-width: 1200px) {
     width: calc(100% - 20px);
+    height: 10px;
     margin-left: 10px;
-    flex-direction: column;
   }
   background: #212329;
 `;

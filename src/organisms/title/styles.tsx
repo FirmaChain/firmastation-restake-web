@@ -26,11 +26,11 @@ export const TitleDesktopTextWrapper = styled.div`
 export const TitleDesktopText = styled.div`
   width: 534px;
   text-align: center;
-  font-size: 42px;
-  font-weight: bold;
-  font-family: Metropolis !important;
+  font-size: 40px;
+  font-weight: 600;
+  font-family: Metropolis-ExtraBold !important;
   color: white;
-  margin-top: 18px;
+  margin-top: 14px;
 `;
 
 export const TitleDesktopMiniText = styled.div`
@@ -43,7 +43,7 @@ export const TitleDesktopMiniText = styled.div`
 
 export const TitleMobileWrapper = styled.div`
   width: 100%;
-  padding-top: 20px;
+  padding-top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,7 +69,7 @@ export const TitleMobileText = styled.div`
   text-align: center;
   font-size: 28px;
   font-weight: bold;
-  font-family: Metropolis !important;
+  font-family: Metropolis-ExtraBold !important;
   color: white;
   margin-top: 10px;
 `;

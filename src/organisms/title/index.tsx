@@ -14,7 +14,6 @@ function Title() {
           <TitleMobileText>FIRMASTATION</TitleMobileText>
           <TitleMobileTextSubWrapper>
             <TitleMobileText>RESTAKE</TitleMobileText>
-            <TitleMobileMiniText>(Beta)</TitleMobileMiniText>
           </TitleMobileTextSubWrapper>
         </TitleMobileTextWrapper>
       </TitleMobileWrapper>
@@ -25,7 +24,6 @@ function Title() {
         <TitleDesktopSymbol/>
         <TitleDesktopTextWrapper>
           <TitleDesktopText>FIRMASTATION RESTAKE</TitleDesktopText>
-          <TitleDesktopMiniText>(Beta)</TitleDesktopMiniText>
         </TitleDesktopTextWrapper>
       </>
     )
