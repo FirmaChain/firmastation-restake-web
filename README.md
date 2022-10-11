@@ -17,10 +17,13 @@
   ```bash
     RESTAKE_API = {
       URI: 'http://localhost:4000/',
-      GET_STATUS: 'restake/status/0'
+      GET_STATUS: 'restake/status'
     };
 
+    STATUS_API_INTERVAL = "Input api call interval time";
     BLOCKCHAIN_EXPLORER = "Input 'blockchain explorer' address"
+    GRAPHQL_CONFIG = "Input 'graphql uri' address"
+    EXPLORER_TRANSACTION = "Input 'blockchain explorer transaction' address"
   ```
 
 ## Run restake web

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { RESTAKE_API } from "../../config";
+import { RESTAKE_API, STATUS_API_INTERVAL } from "../../config";
 import { AxiosInstance } from "../../utils/axiosInstance";
 import { useInterval } from "../../utils/interval";
 import { IRestakeState } from "./interfaces";
@@ -37,7 +37,7 @@ export const useRestakeData = () => {
       } catch (e) {
         console.log(e);
       }
-  }, 5000);
+  }, STATUS_API_INTERVAL);
 
   return {
     restakeData

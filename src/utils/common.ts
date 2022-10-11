@@ -1,3 +1,5 @@
+import { getDateFormat } from "./dateFormat";
+
 export const isValid = (data: any) => {
   if (data === null) return false;
   if (data === undefined) return false;
@@ -35,13 +37,14 @@ export const convertNumber = (value: string | number | undefined) => {
 };
 
 export const changeDateFormat = (dateString: string) => {
-  const nowDate = new Date(dateString);
-  const year = nowDate.getUTCFullYear().toString().slice(2, 4);
-  const month = nowDate.getUTCMonth() + 1;
-  const day = nowDate.getUTCDate();
-  const hour = nowDate.getUTCHours();
-  const minute = nowDate.getUTCMinutes();
-  const second = nowDate.getUTCSeconds();
+  const nowDate = new Date(getDateFormat(dateString));
+
+  const year = nowDate.getFullYear().toString().slice(2, 4);
+  const month = nowDate.getMonth() + 1;
+  const day = nowDate.getDate();
+  const hour = nowDate.getHours();
+  const minute = nowDate.getMinutes();
+  const second = nowDate.getSeconds();
 
   let newMonth = month < 10 ? `0${month}` : month;
   let newDay = day < 10 ? `0${day}` : day;
