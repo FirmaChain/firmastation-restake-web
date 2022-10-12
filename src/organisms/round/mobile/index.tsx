@@ -59,10 +59,6 @@ function RoundMobile({ roundState, changeModalState, txDataState }: IProps) {
     }
   }, [directionState]);
 
-  useEffect(() => {
-
-  }, [currentRoundState]);
-
   const onClickMovePage = (direction: number) => {
     if (direction !== 0) {
       setDirectionState(direction);

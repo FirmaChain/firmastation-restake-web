@@ -1,5 +1,3 @@
-import { getDateFormat } from "./dateFormat";
-
 export const isValid = (data: any) => {
   if (data === null) return false;
   if (data === undefined) return false;
@@ -37,7 +35,7 @@ export const convertNumber = (value: string | number | undefined) => {
 };
 
 export const changeDateFormat = (dateString: string) => {
-  const nowDate = new Date(getDateFormat(dateString));
+  const nowDate = new Date(dateString);
 
   const year = nowDate.getFullYear().toString().slice(2, 4);
   const month = nowDate.getMonth() + 1;
