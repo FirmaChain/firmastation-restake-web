@@ -60,3 +60,11 @@ export const convertTransactionHash = (txHash: string, Hashlength: number) => {
 
   return `${frontString}...${endString}`;
 }
+
+export const getGmtOffset = () => {
+  const date = new Date();
+  const offset = date.getTimezoneOffset();
+  console.log(offset);
+  const GMT = offset / 60 < 0 ? '+' + Math.abs(offset / 60) : (offset / 60) * -1;
+  return `GMT${GMT}`;
+}

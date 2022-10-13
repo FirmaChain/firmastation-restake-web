@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { changeDateFormat } from "../../../utils/common";
+import { changeDateFormat, getGmtOffset } from "../../../utils/common";
 
 import { IModalTxHashData, IRoundData, IRoundDetail } from "../../restake/interfaces";
 import { 
@@ -86,7 +86,7 @@ function RoundMobile({ roundState, changeModalState, txDataState }: IProps) {
       <RoundTitle>Rounds</RoundTitle>
       <RoundHeaderWrapper>
         <RoundHeaderItem>Round</RoundHeaderItem>
-        <RoundHeaderItem>Start Time <span style={{ fontSize: "12px", color: "#666" }}>(UTC)</span></RoundHeaderItem>
+        <RoundHeaderItem>Start Time <span style={{ fontSize: "11px", color: "#666" }}>({`${getGmtOffset()}`})</span></RoundHeaderItem>
         <RoundHeaderItem>Amount</RoundHeaderItem>
         <RoundHeaderItem>Count</RoundHeaderItem>
         <RoundHeaderItem>TX</RoundHeaderItem>

@@ -1,7 +1,7 @@
 import React from "react";
 import AutoSizer from 'react-virtualized-auto-sizer';
 import { FixedSizeList as List } from 'react-window';
-import { changeDateFormat } from "../../../utils/common";
+import { changeDateFormat, getGmtOffset } from "../../../utils/common";
 import { IModalTxHashData, IRoundData, IRoundDetail } from "../../restake/interfaces";
 
 import { RoundColumnBtnImg, RoundColumnItem12, RoundColumnItem16, RoundColumnItemWrapper, RoundContainer, RoundHeaderItem, RoundHeaderWrapper } from "./styles";
@@ -70,7 +70,7 @@ function RoundDesktop({ roundState, changeModalState, txDataState }: IProps) {
           <>
             <RoundHeaderWrapper style={{ width }}>
               <RoundHeaderItem>Round</RoundHeaderItem>
-              <RoundHeaderItem>Time Stamp <span style={{ fontSize: "12px", color: "#666" }}>(UTC)</span></RoundHeaderItem>
+              <RoundHeaderItem>Time Stamp <span style={{ fontSize: "12px", color: "#666" }}>({`${getGmtOffset()}`})</span></RoundHeaderItem>
               <RoundHeaderItem>Amount</RoundHeaderItem>
               <RoundHeaderItem>Fees</RoundHeaderItem>
               <RoundHeaderItem>Count</RoundHeaderItem>
